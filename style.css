@@ -1,0 +1,8 @@
+body{
+    background-color: lightblue;
+}
+
+.list{
+    position: absolute;
+    margin-left: 100px;
+}
