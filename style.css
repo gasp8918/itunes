@@ -1,0 +1,12 @@
+body{
+    background-color: lightpink;
+    align-items: center;
+}
+
+#searchbar {
+    margin: auto;
+    text-align: center;
+    padding: 300px 0;
+    width: 50%;
+    height: 200px;
+  }
