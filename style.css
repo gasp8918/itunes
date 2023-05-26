@@ -1,8 +1,12 @@
 body{
-    background-color: lightblue;
+    background-color: lightpink;
+    align-items: center;
 }
 
-.list{
-    position: absolute;
-    margin-left: 100px;
-}
+#searchbar {
+    margin: auto;
+    text-align: center;
+    padding: 300px 0;
+    width: 50%;
+    height: 200px;
+  }
