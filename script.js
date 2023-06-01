@@ -5,7 +5,7 @@ const ITEM_TEMPLATE = '<a class="result" href="!"><img src="!"<br>!</a>' // plan
 var current_url
 var response
 var searchType = "artistTerm" // later we'll add a dropdown and let peoplepick from songs and artists and albums to search
-SUBMIT.addEventListener("click", ()=> {getList(getURL(INPUT.value))})
+SUBMIT.addEventListener("click", ()=> {parseList(getList(getURL(INPUT.value)))})
 
 
 
@@ -13,7 +13,7 @@ function getList(url) {
     fetch(url)
     .then((res) => res.json()) // stole from the dad joke one lol
         .then((data)=> {
-            console.log(res)
+            console.log(data)
         })
 }
 
@@ -27,4 +27,8 @@ function getURL(search) { // generates the url link we'll ask the itunes api abo
     search = search.replace(/\s+/g, '+');; // might get rid of the spaces in a string
     current_url = API_URL.concat(search, "&media=music&attribute=", searchType);  
     return current_url 
+}
+
+function parseList(data) {
+    
 }
