@@ -7,13 +7,13 @@ var response
 var searchType = "artistTerm" // later we'll add a dropdown and let peoplepick from songs and artists and albums to search
 SUBMIT.addEventListener("click", ()=> {parseList(getList(getURL(INPUT.value)))})
 
-
-
 function getList(url) {
     fetch(url)
     .then((res) => res.json()) // stole from the dad joke one lol
         .then((data)=> {
             console.log(data)
+            console.log(Object.keys(data.results).length)
+            return (data)
         })
 }
 
@@ -30,5 +30,13 @@ function getURL(search) { // generates the url link we'll ask the itunes api abo
 }
 
 function parseList(data) {
-    
+    console.log(data)
+}
+
+function createElement(link, img, name){
+    let final_url = ITEM_TEMPLATE
+    final_url = final_url.replace("!", link)
+    final_url = final_url.replace("!", img)
+    final_url = final_url.replace("!", name)
+    console.log(final_url)
 }
