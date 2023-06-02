@@ -6,19 +6,28 @@ var current_url
 var response
 var searchType = "artistTerm" // later we'll add a dropdown and let peoplepick from songs and artists and albums to search
 SUBMIT.addEventListener("click", ()=> {
-    let search = INPUT.Value
-    search = search.replace(/\s+/g, '+');; // might get rid of the spaces in a string
+    let search = INPUT.value
+    var result
+    search = search.replace(/\s+/g, '+'); // might get rid of the spaces in a string
     current_url = API_URL.concat(search, "&media=music&attribute=", searchType);
     
     fetch(current_url)
     .then((res) => res.json()) // stole from the dad joke one lol
         .then((data)=> {
-            console.log(data)
+            // console.log(data)
+            result = data
+            console.log(result)
+            for (i=0;i < result.resultCount ; i++) { // do this later lol
+                let element = ITEM_TEMPLATE
+                let art = getArt(result.results[i].artworkUrl100)
+                element = element.replace("!", result.results[i].trackViewUrl)
+                element = element.replace("!", art)
+                element = element.replace("!", result.results[i].trackName)
+                let elm = document.createElement("a")
+                console.log(element)
+                elm.innerHTML = element // fix please plea seplase plase
+            }
         })
-    
-    for (i=0;i<data.resultCount; i++) { // do this later lol
-
-    }
 })
 
 
