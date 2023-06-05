@@ -5,6 +5,11 @@ body{
     font-weight:bold
 }
 
+h1 {
+    margin-left: 44.5%;
+    color: whitesmoke;
+}
+
 #searchbar {
     margin: auto;
     text-align: center;
